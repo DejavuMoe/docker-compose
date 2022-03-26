@@ -4,3 +4,4 @@ services:
         ports:
             - '8010:8000'
         image: mattermost/focalboard
+        restart: unless-stopped
