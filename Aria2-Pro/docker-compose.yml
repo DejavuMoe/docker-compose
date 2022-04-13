@@ -9,7 +9,7 @@ services:
       - PUID=65534
       - PGID=65534
       - UMASK_SET=022
-      - RPC_SECRET=P3TERX  # This is the Aria2 RPC Token
+      - RPC_SECRET=admin123  # This is the Aria2 RPC Token
       - RPC_PORT=6800
       - LISTEN_PORT=6888
       - DISK_CACHE=64M
