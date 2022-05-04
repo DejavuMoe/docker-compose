@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  webdav: 
+    image: tickstep/aliyunpan-webdav:<tag>
+    container_name: aliyunpan-webdav
+    restart: unless-stopped
+    ports:
+      - 23077:23077
+    environment:
+      - TZ=Asia/Shanghai
+      - ALIYUNPAN_REFRESH_TOKEN=b9123...13e66a1 #AliYunPan refresh token
+      - ALIYUNPAN_AUTH_USER=admin # WebDAV User
+      - ALIYUNPAN_AUTH_PASSWORD=admin # WebDAV Password
+      - ALIYUNPAN_PAN_DIR=/ # WebDAV BaseDir
+      - ALIYUNPAN_TRANSFER_URL_TYPE=1 # 1-默认 2-阿里ECS环境(ECS必须是经典网络类型)
+      - ALIYUNPAN_BLOCK_SIZE=10240 # FileBlockSize Range: 1024~10240
