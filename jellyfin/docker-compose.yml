@@ -1,0 +1,20 @@
+version: "3.2"
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - JELLYFIN_PublishedServerUrl=192.168.0.5 #optional
+    volumes:
+      - ./library:/config
+      - ./shows:/data/shows
+      - ./movies:/data/movies
+    ports:
+      - 8096:8096 # HTTP WebUI
+      - 8920:8920 # HTTPS WebUI[Optional] (you need to set up your own certificate).
+      - 7359:7359/udp # Allows clients to discover Jellyfin on the local network. [Optional]
+      - 1900:1900/udp # Service discovery used by DNLA and clients. [Optional]
+    restart: unless-stopped

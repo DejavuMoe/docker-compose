@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+    tanoshi:
+        container_name: tanoshi
+        image: faldez/tanoshi
+        ports:
+            - '8080:80'
+        volumes:
+            - ./data:/tanoshi
+            - ./manga:/tanoshi/manga
+        restart: unless-stopped

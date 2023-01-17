@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+    metube:
+        image: alexta69/metube
+        ports:
+            - '8081:8081'
+        volumes:
+            - './downloads:/downloads'
+        restart: unless-stopped

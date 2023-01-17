@@ -1,0 +1,14 @@
+version: '3.5'
+
+services: 
+  flowerss:
+    image: indes/flowerss-bot
+    volumes: 
+      - ./config:/root/.flowerss
+    restart: unless-stopped
+    environment: 
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    networks: 
+      - default

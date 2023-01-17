@@ -1,0 +1,17 @@
+version: "3.1"
+services:
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - DOCKER_MODS=linuxserver/calibre-web:calibre
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1
+    volumes:
+      - ./config:/config
+      - ./library:/books
+    ports:
+      - 8083:8083
+    restart: unless-stopped
