@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   book-searcher:
-    image: dejavumoe/book-searcher:0.8.4
+    image: dejavumoe/book-searcher
     restart: always
     ports:
       - "4590:7070"
