@@ -5,6 +5,6 @@ services:
     image: dejavumoe/book-searcher
     restart: always
     ports:
-      - "4590:7070"
+      - "7070:7070"
     volumes:
       - ./index:/index
